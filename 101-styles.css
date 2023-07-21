@@ -1,0 +1,552 @@
+/* SUMMARY
+    1. GLOBAL
+    2. LAYOUT
+    3. SECTION
+    4. CARD
+*/
+
+/*** 1. GLOBAL ***/
+
+/* Reset / Normalize   ============================= */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+/* Variables   ============================= */
+
+:root {
+--color-primary: #FF6565;
+--color-black: #071629;
+--color-white: #ffffff;
+--color-grey: #a0a0a0;
+--color-light-grey: #f3f3f3;
+--color-dark-grey: #353535;
+
+--text-color: var(--color-black);
+
+--font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+--font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+--font-size-small: 1.2rem;
+--font-size-medium: 1.6rem;
+--font-size-large: 1.8rem;
+--font-size-x-large: 2.3rem;
+--font-size-xx-large: 4.8rem;
+
+--font-weight-regular: 400;
+--font-weight-bold: 700;
+
+--line-height-small: 1.2;
+--line-height-base: 1.5;
+--line-height-big: 1.8;
+
+/** SECTION **/
+--section-padding: 5rem 0;
+--section-header-padding: 0 0 3rem;
+--section-header-align: center;
+--section-title-font-size: var(--font-size-xx-large);
+--section-title-font-weight: var(--font-weight-bold);
+--section-title-line-height: var(--line-height-small);
+--section-title-margin: 0;
+--section-title-color: var(--color-black);
+--section-tagline-transform: uppercase;
+--section-tagline-color: var(--color-primary);
+--section-tagline-font-family: var(--font-family-headings);
+--section-tagline-font-weight: var(--font-weight-bold);
+--section-tagline-margin: 0;
+--section-body-padding: 2rem 0 4rem;
+--section-footer-padding: 3rem 0 0;
+--section-footer-align: center;
+
+/** HEADER **/
+--header-padding: 4rem 0 0;
+
+
+/** FOOTER **/
+--footer-padding: 5rem 0 1rem;
+
+/** NAVBAR **/
+--nav-item-font-family: var(--font-family-headings);
+--nav-item-font-weight: var(--font-weight-bold);
+--nav-item-font-size: var(--font-size-medium);
+--nav-item-letter-spacing: .04rem;
+--nav-item-display: inline-block;
+--nav-item-margin: 0 0 0 2rem;
+--nav-item-link-hover: var(--color-primary);
+
+/** BUTTON **/
+--button-display: inline-block;
+--button-padding: 1.5rem 3rem;
+--button-border: var(--color-primary) solid 0.2rem;
+--button-color: var(--color-primary);
+--button-text-decoration: none;
+--button-font-size: var(--font-size-large);
+--button-hover-text-decoration: none;
+--button-hover-background: var(--color-primary);
+
+/** MOTION **/
+--transition-duration: .3s;
+--transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+
+/* Base
+  ============================= */
+
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+font-size: 62.5%;
+}
+
+body {
+color: var(--text-color);
+font-family: var(--font-family-base);
+font-size: var(--font-size-medium);
+font-weight: var(--font-weight-regular);
+line-height: var(--line-height-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-family-title);
+font-weight: var(--font-weight-bold);
+}
+
+a {
+color: var(--text-color);
+text-decoration: none;
+}
+
+a:visited {
+font-style: italic;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+a:active {
+background-color: var(--color-light-grey);
+}
+
+.button {
+display: var(--button-display);
+padding: var(--button-padding);
+border: var(--button-border);
+font-size: var(--button-font-size);
+text-decoration: var(--button-text-decoration);
+border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 30px;
+background-color: var(--button-color);
+color: var(--color-white);
+margin-top: 20px;
+margin-bottom: 50px;
+}
+
+.button:hover {
+color: var(--button-hover-color);
+text-decoration: var(--button-hover-text-decoration);
+background: var(--button-hover-background);
+transition-duration: var(--transition-duration);
+}
+
+/* Helpers
+  ============================= */
+
+.visually-hidden:not(:focus):not(:active) {
+position: absolute !important;
+height: 1px;
+width: 1px;
+overflow: hidden;
+clip: rect(1px, 1px, 1px, 1px);
+white-space: nowrap;
+}
+/* This is font types */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src:  url('fonts/holberton_school-icon.eot?sq4eq4');
+    src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+      url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+      url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+      url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'holberton_school-icon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .holberton_school-icon-arrow_1:before {
+    content: "\e900";
+  }
+  .holberton_school-icon-arrow_2:before {
+    content: "\e901";
+  }
+  .holberton_school-icon-arrow_3:before {
+    content: "\e902";
+  }
+  .holberton_school-icon-arrow_4:before {
+    content: "\e903";
+  }
+  .holberton_school-icon-arrow_5:before {
+    content: "\e904";
+  }
+  .holberton_school-icon-check:before {
+    content: "\e905";
+  }
+  .holberton_school-icon-ic_bag:before {
+    content: "\e906";
+  }
+  .holberton_school-icon-ic_cart:before {
+    content: "\e907";
+  }
+  .holberton_school-icon-ic_facebook:before {
+    content: "\e908";
+  }
+  .holberton_school-icon-ic_hearing:before {
+    content: "\e909";
+  }
+  .holberton_school-icon-ic_instagram:before {
+    content: "\e90a";
+  }
+  .holberton_school-icon-ic_laptop:before {
+    content: "\e90b";
+  }
+  .holberton_school-icon-ic_money:before {
+    content: "\e90c";
+  }
+  .holberton_school-icon-ic_music:before {
+    content: "\e90d";
+  }
+  .holberton_school-icon-ic_sound:before {
+    content: "\e90e";
+  }
+  .holberton_school-icon-ic_twitter:before {
+    content: "\e90f";
+  }
+  .holberton_school-icon-ic_video:before {
+    content: "\e910";
+  }
+  .holberton_school-icon-menu:before {
+    content: "\e911";
+  }
+  .holberton_school-icon-search_1:before {
+    content: "\e912";
+  }
+  .holberton_school-icon-search_2:before {
+    content: "\e913";
+  }
+  .holberton_school-icon-star:before {
+    content: "\e914";
+  }
+
+/* End of font types */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+header{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(assets/headphones_hero_1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 700px;
+    width: 100%;
+}
+.nav-bar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 5px 0;
+
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+}
+.nav-bar ul li {
+    list-style: none;
+    
+}
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #fff
+}
+.nav-bar ul li a:hover {
+  color: #FF6565;
+}
+
+.header-content {
+    margin: 200px auto;
+    max-width: 1000px;
+    text-align: center;
+    color: #fff;
+}
+
+.middle-logo h2{
+    /* border: 2px solid red; */
+    color: #fff;
+    font-size: 2rem;
+    line-height: 2;
+}
+.middle-logo p {
+    color: #fff;
+    /* padding-top: -10px; */
+}
+.middle-logo button{
+    background: #FF6565;
+    padding: 10px 20px;
+    margin: 30px 0;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+}
+.middle-logo button:hover{
+    color:rgb(#FF6565, 0.9);
+}
+.end-logo{
+   line-height: 1.3;
+   font-size: 0.8rem;
+}
+.holberton_school-icon-men{
+  visibility: hidden;
+  color: #fff;
+  font-size: 40px;
+}
+@media (max-width: 768px) {
+    .holberton_school-icon-menu
+    {
+     visibility: visible;
+    }
+    
+}
+
+
+#first-nav-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 20px;
+}
+#first-nav-info h1{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#second-nav-info{
+   display: flex; 
+   display: flex;
+   justify-content: center;
+   padding-top: 10px;
+
+}
+#second-nav-info h3{
+    font-size: small;
+}
+.holberton_school-icon-ic_sound {
+  color: #FF6565;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+.holberton_school-icon-ic_cart{
+    color: #FF6565;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 0 auto;
+}
+.holberton_school-icon-ic_music{
+    color: #FF6565;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+.holberton_school-icon-ic_hearing {
+    color: #FF6565;
+    font-size: 30px;
+}
+.second-nav-info-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    gap: 10px;
+}
+
+main .our-result-setion  {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(assets/headphones_hero_2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* height: 350px; */
+    width: 100%; 
+    padding: 60px;
+    
+
+}
+
+.headphones_hero_2 {
+    background-size: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative
+}
+
+.our-result-setion-2{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.our-result-setion-2 > p {
+    width: 60%;
+    text-align: center;
+}
+
+.pentagone img{
+    width: 170px;
+    height: 150px;
+    display: flex;
+    /* flex-direction: row; */
+ 
+}
+.pentagone-img{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    /* margin-top: 50px; */
+}
+
+.pentagone div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    color: #fff;
+    position: relative;
+    top: -110px;
+    
+}
+
+.contact-us {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  
+}
+.contact-us form {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    
+}
+
+.contact-us form button{
+    background-color: #FF6565;
+    color: #fff;
+    text-decoration: 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.footer-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 20px;
+    align-items: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+section.contact-section {
+    padding: 100px 200px;
+  }
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: var(--color-primary);
+  }
+  ::-webkit-input-placeholder {color: var(--color-black);} 
+  ::-moz-placeholder { color: var(--color-black);} /* Firefox 19+ */
+  :-ms-input-placeholder { color: var(--color-black);} /* IE 10+ */
+  :-moz-placeholder {color: var(--color-black);}  /* Firefox 18- */
+  
+  input#fname {
+    font-weight: bold;
+  }
+  input#email {
+    font-weight: bold;
+  }
+  input#msg {
+    font-weight: bold;
+  }
+
+  @media (max-width: 1000px){
+    .pentagone{
+        width: 157.5px !important;
+        margin: 20px;
+    }
+  }
