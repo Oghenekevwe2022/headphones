@@ -351,9 +351,6 @@ header{
     
 }
 
-#what-we-do-section {
-   
-}
 
 #first-nav-info {
     display: flex;
@@ -404,5 +401,152 @@ header{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    gap: 10px;
 }
+
+main .our-result-setion  {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(assets/headphones_hero_2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* height: 350px; */
+    width: 100%; 
+    padding: 60px;
+    
+
+}
+
+.headphones_hero_2 {
+    background-size: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative
+}
+
+.our-result-setion-2{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.our-result-setion-2 > p {
+    width: 60%;
+    text-align: center;
+}
+
+.pentagone img{
+    width: 170px;
+    height: 150px;
+    display: flex;
+    /* flex-direction: row; */
+ 
+}
+.pentagone-img{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    /* margin-top: 50px; */
+}
+
+.pentagone div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    color: #fff;
+    position: relative;
+    top: -110px;
+    
+}
+
+.contact-us {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  
+}
+.contact-us form {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    
+}
+
+.contact-us form button{
+    background-color: #FF6565;
+    color: #fff;
+    text-decoration: 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.footer-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 20px;
+    align-items: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+section.contact-section {
+    padding: 100px 200px;
+  }
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: var(--color-primary);
+  }
+  ::-webkit-input-placeholder {color: var(--color-black);} 
+  ::-moz-placeholder { color: var(--color-black);} /* Firefox 19+ */
+  :-ms-input-placeholder { color: var(--color-black);} /* IE 10+ */
+  :-moz-placeholder {color: var(--color-black);}  /* Firefox 18- */
+  
+  input#fname {
+    font-weight: bold;
+  }
+  input#email {
+    font-weight: bold;
+  }
+  input#msg {
+    font-weight: bold;
+  }
+
+  @media (max-width: 1000px){
+    .pentagone{
+        width: 157.5px !important;
+        margin: 20px;
+    }
+  }
